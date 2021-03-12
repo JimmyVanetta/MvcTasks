@@ -145,6 +145,21 @@ namespace MvcTasks.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //// CREATE POST: Tasks/Complete/5
+        //public async Task<IActionResult> Complete(int id, [Bind("Id,IsCompleted")] Tasks tasks)
+        //{
+        //    if (id != tasks.Id)
+        //    {
+        //        return NotFound();
+        //    }
+        //    if (ModelState.IsValid)
+        //    {
+
+        //    }
+        //}
+
         private bool TasksExists(int id)
         {
             return _context.Tasks.Any(e => e.Id == id);
