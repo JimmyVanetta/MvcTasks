@@ -151,3 +151,4 @@ C:\Users\j_van\Source\Repos\MvcTasks\obj\Debug\net5.0\ref\MvcTasks.dll
 C:\Users\j_van\Source\Repos\MvcTasks\obj\Debug\net5.0\MvcTasks.pdb
 C:\Users\j_van\Source\Repos\MvcTasks\obj\Debug\net5.0\MvcTasks.genruntimeconfig.cache
 C:\Users\j_van\Source\Repos\MvcTasks\obj\Debug\net5.0\MvcTasks.csprojAssemblyReference.cache
+C:\Users\j_van\Source\Repos\MvcTasks\obj\Debug\net5.0\Razor\Views\Tasks\Complete.cshtml.g.cs
