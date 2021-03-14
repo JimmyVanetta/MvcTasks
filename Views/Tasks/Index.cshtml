@@ -4,7 +4,7 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Tasks</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -31,30 +31,36 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreateDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DueDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsCompleted)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a> |
-                <a asp-action="Complete" asp-route-id="@item.Id">Complete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreateDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DueDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    <span class="iscompleted">@Html.DisplayFor(modelItem => item.IsCompleted)</span>
+                </td>
+                <td>
+                    @*<a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a> |
+                        <a asp-action="Complete" asp-route-id="@item.Id">Complete</a>*@
+                    
+                    <span class="editaction">@Html.ActionLink("Edit", "Edit", "Tasks", new { id = item.Id }, null) |</span>
+                    @Html.ActionLink("Details", "Details", "Tasks", new { id = item.Id }, null) |
+                    @Html.ActionLink("Delete", "Delete", "Tasks", new { id = item.Id }, null) |
+                    <span class="completeaction">@Html.ActionLink("Complete", "Complete", "Tasks", new { id = item.Id }, null)</span>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
