@@ -7,12 +7,14 @@
 
 document.addEventListener("DOMContentLoaded", function () {
     var checkedList = document.getElementsByClassName('iscompleted');
-    var elements = document.getElementsByClassName('editaction completeaction');
+    var edit = document.getElementsByClassName('editaction');
+    var complete = document.getElementsByClassName('completeaction')
     var i;
 
     for (i = 0; i < checkedList.length; i++) {
-        if (checkedList[i].checked) {
-            elements[i].style.display = 'none';
+        if (checkedList[i].firstElementChild.checked) {
+            edit[i].style.display = 'none';
+            complete[i].style.display = 'none';
         }
     }
 });
