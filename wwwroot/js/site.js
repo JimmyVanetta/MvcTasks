@@ -1,19 +1,35 @@
 ﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 // for details on configuring this project to bundle and minify static web assets.
 
-// Write your JavaScript code.
-// API Call
+// CALL TO DB
 const callApi = async (callback, controllerName) => {
     const respone = await fetch(controllerName);
     const myJson = await respone.json();
     callback(myJson);
 }
+// DELETE CALL
+const deleteTask = function () {
+    const myDataObject = { id: 1}
+    const deleteData = async () => {
+    const response = await fetch('https://localhost:44316/api/tasksapi' , {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(myDataObject)
+    });
 
-const deleteApi = async (callback, controllerName) => {
-    const response = await delete(controllerName);
+    const data = await response.json();
+
+    // now do whatever you want with the data  
+    console.log(data);
+    }
+    deleteData();
 }
+// GET CALL
+    // GET TASK DETAILS
 
-// build table of tasks
+// build table of tasks 
 const buildTaskTable = function () {
     var buildTable = function (jsonData) {
         var container = document.getElementById("taskcards");
@@ -110,23 +126,3 @@ const buildTaskTable = function () {
     }
     callApi(buildTable, 'https://localhost:44316/api/tasksapi');
 }
-
-const deleteTaskFromTable = function (id) {
-    deleteApi(deleteTaskFromTable, 'https://localhost:44316/api/tasksapi/' + id)
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-    var checkedList = document.getElementsByClassName('iscompleted');
-    var edit = document.getElementsByClassName('editaction');
-    var complete = document.getElementsByClassName('completeaction');
-    var i;
-    // Hide edit and complete buttons for completed tasks
-    for (i = 0; i < checkedList.length; i++) {
-        if (checkedList[i].firstElementChild.checked) {
-            edit[i].style.display = 'none';
-            complete[i].style.display = 'none';
-        }
-    }
-    buildTaskTable();
-});
-
