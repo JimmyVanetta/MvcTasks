@@ -8,26 +8,28 @@ const callApi = async (callback, controllerName) => {
     callback(myJson);
 }
 // DELETE CALL
-const deleteTask = function () {
-    const myDataObject = { id: 1}
+const deleteTask = function (myDataObject) {
     const deleteData = async () => {
-    const response = await fetch('https://localhost:44316/api/tasksapi' , {
-        method: 'DELETE',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(myDataObject)
-    });
+        const response = await fetch('https://localhost:44316/api/tasksapi/' + myDataObject, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: null
+        });
+        const data = await response.json();
 
-    const data = await response.json();
-
-    // now do whatever you want with the data  
-    console.log(data);
+        // now do whatever you want with the data  
+        console.log(data);
     }
     deleteData();
 }
 // GET CALL
     // GET TASK DETAILS
+
+// EDIT CALL
+
+// COMPLETE CALL
 
 // build table of tasks 
 const buildTaskTable = function () {
@@ -111,6 +113,8 @@ const buildTaskTable = function () {
             deleteButton.innerText = "Delete";
             completeButton.innerText = "Complete";
 
+            // set action button onclick
+
             // append buttons to button div
             buttonDiv.appendChild(detailsButton);
             buttonDiv.appendChild(editButton);
@@ -126,3 +130,7 @@ const buildTaskTable = function () {
     }
     callApi(buildTable, 'https://localhost:44316/api/tasksapi');
 }
+
+window.addEventListener('load', function () {
+    buildTaskTable();
+})
