@@ -31,6 +31,5 @@ document.addEventListener("DOMContentLoaded", function () {
     if (document.getElementsByClassName("table")) {
         callApi(buildTable, 'https://localhost:44316/api/tasksapi%27');
     }
-
 });
 

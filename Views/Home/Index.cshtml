@@ -2,10 +2,18 @@
     ViewData["Title"] = "Home Page";
 }
 
-<!-- Add simple styling? -->
-
-<div class="welcome text-center">
-    <h1 class="display-4">Welcome</h1>
+<div class="text-center">
+    <h2 class="display-4">Welcome</h2>
     <p>Use this app to keep track of all your daily tasks!</p>
-    <a class="" asp-area="" asp-controller="Tasks" asp-action="Index">Let's get started!</a>
+    @*<a class="" asp-area="" asp-controller="Tasks" asp-action="Index">Let's get started!</a>*@
+</div>
+<!-- Task Cards -->
+<div class="container">
+    <h3>Tasks</h3>
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Task</h4>
+            <p class="card-text">Do some tasky things.</p>
+        </div>
+    </div>
 </div>
