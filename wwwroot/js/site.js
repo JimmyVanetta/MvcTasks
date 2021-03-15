@@ -13,18 +13,29 @@ const buildTaskTable = function () {
     var buildTable = function (jsonData) {
         var container = document.getElementById("taskcards");
         for (var containerData in jsonData) {
+            // setup card
             var card = document.createElement("div");
-            card.style.class = 'card-body';
+            card.style.class = 'card task';
+
+            // setup card body
+            var cardBody = document.createElement("div");
+            cardBody.style.class = 'card-body';
+            card.appendChild(cardBody);
+
+            // setup elements in card
             var h5 = document.createElement("h5");
             var p = document.createElement("p");
-
-            h5.innerText = 'Task';
-            p.innerText = 'Do some tasky things.';
+            h5.innerText = jsonData[containerData].title;
+            p.innerText = jsonData[containerData].description;
+            h5.style.class = 'card-title'
+            p.style.class = 'card-text'
+            cardBody.appendChild(h5)
+            cardBody.appendChild(p)
 
             container.appendChild(card);
         }
     }
-    callApi(buildTable, 'https://localhost:44316/api/tasksapi%27');
+    callApi(buildTable, 'https://localhost:44316/api/tasksapi');
 }
 
 document.addEventListener("DOMContentLoaded", function () {
