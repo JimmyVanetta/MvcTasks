@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "jZw/gr0sRlc3EQT3WppG43WRi6h1FZqb2XZX64V7gWcXjhs9adoeZQL30fC97NPk8jzhhY8gMhKbglnjyEQ9Ug==",
+  "dgSpecHash": "TZnaXffzDG8xOA/T1ekVY5YeBhaexgPNHK3L81ZkLr28PdslRg7OvhjF48Aq9tE6OBcyrycLxKL/gQYdD0A6Ww==",
   "success": true,
   "projectFilePath": "C:\\Users\\j_van\\Source\\Repos\\MvcTasks\\MvcTasks.csproj",
   "expectedPackageFiles": [
@@ -24,8 +24,8 @@
     "C:\\Users\\j_van\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\5.0.4\\microsoft.entityframeworkcore.analyzers.5.0.4.nupkg.sha512",
     "C:\\Users\\j_van\\.nuget\\packages\\microsoft.entityframeworkcore.design\\5.0.4\\microsoft.entityframeworkcore.design.5.0.4.nupkg.sha512",
     "C:\\Users\\j_van\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\5.0.4\\microsoft.entityframeworkcore.relational.5.0.4.nupkg.sha512",
-    "C:\\Users\\j_van\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\5.0.3\\microsoft.entityframeworkcore.sqlserver.5.0.3.nupkg.sha512",
-    "C:\\Users\\j_van\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\5.0.3\\microsoft.entityframeworkcore.tools.5.0.3.nupkg.sha512",
+    "C:\\Users\\j_van\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\5.0.4\\microsoft.entityframeworkcore.sqlserver.5.0.4.nupkg.sha512",
+    "C:\\Users\\j_van\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\5.0.4\\microsoft.entityframeworkcore.tools.5.0.4.nupkg.sha512",
     "C:\\Users\\j_van\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\5.0.0\\microsoft.extensions.caching.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\j_van\\.nuget\\packages\\microsoft.extensions.caching.memory\\5.0.0\\microsoft.extensions.caching.memory.5.0.0.nupkg.sha512",
     "C:\\Users\\j_van\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",
