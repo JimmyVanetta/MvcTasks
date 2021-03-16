@@ -7,21 +7,7 @@ const callApi = async (callback, controllerName) => {
     const myJson = await respone.json();
     callback(myJson);
 }
-// DELETE CALL
-const deleteTask = function (myDataObject) {
-    const deleteData = async () => {
-        const response = await fetch('https://localhost:44316/api/tasksapi/' + myDataObject, {
-            method: 'DELETE',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: null
-        });
-        buildTaskTable();
-    }
-    deleteData();
-}
-// ADD CALL
+// POST CALL
 const addTask = function (myDataObject) {
     const addData = async () => {
         const response = await fetch('https://localhost:44316/api/tasksapi', {
@@ -36,12 +22,52 @@ const addTask = function (myDataObject) {
     addData();
 }
 // GET CALL
+const getTask = function (myDataObject) {
+    const getData = async () => {
+        const response = await fetch('https://localhost:44316/api/tasksapi/' + myDataObject, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        });
+        const taskJson = await response.json();
 
-// EDIT CALL
+        return taskJson
+    }
+    var returnData = getData().then(response => { return response });
 
-// COMPLETE CALL
-
-// build table of tasks 
+    return returnData
+}
+// PUT CALL
+const editTask = function (myDataObject) {
+    var array = Object.values(myDataObject);
+    const editData = async () => {
+        const response = await fetch('https://localhost:44316/api/tasksapi/' + array[0], {
+            method: 'PUT',
+            body: JSON.stringify(myDataObject),
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        });
+        buildTaskTable();
+    }
+    editData();
+}
+// DELETE CALL
+const deleteTask = function (myDataObject) {
+    const deleteData = async () => {
+        const response = await fetch('https://localhost:44316/api/tasksapi/' + myDataObject, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: null
+        });
+        buildTaskTable();
+    }
+    deleteData();
+}
+// build table of tasks and generate Home/Index.cshtml list view
 const buildTaskTable = function () {
     var buildTable = function (jsonData) {
         var container = document.getElementById("taskcards");
@@ -75,14 +101,14 @@ const buildTaskTable = function () {
             // set detail elements inner text
             title.innerText = jsonData[containerData].title;
             createDate.innerText = 'Created: ' + jsonData[containerData].createDate;
-            dueDate.innerText = 'Due: ' + jsonData[containerData].dueDate;
+            dueDate.innerText = 'Due: ' + new Date(jsonData[containerData].dueDate).toLocaleDateString();
             description.innerText = jsonData[containerData].description;
 
             // append details to card body
             cardBody.appendChild(title);
-            cardBody.appendChild(createDate);
             cardBody.appendChild(dueDate);
-            cardBody.appendChild(description);
+            //cardBody.appendChild(createDate);      
+            //cardBody.appendChild(description);
 
             // setup completed check box
             var completedDiv = document.createElement("div");
@@ -118,10 +144,6 @@ const buildTaskTable = function () {
             var editButton = document.createElement("button");
             var deleteButton = document.createElement("button");
             var completeButton = document.createElement("button");
-            var dataInput = document.createElement("input");
-            dataInput.setAttribute("type", "hidden");
-            dataInput.setAttribute("name", "taskid");
-            dataInput.setAttribute("value", jsonData[containerData].id);
 
             // set action button class names
             buttonDiv.className = "actionbuttons";
@@ -153,6 +175,7 @@ const buildTaskTable = function () {
             })(containerData);
 
             // set delete button onclick
+            // delete without redirecting
             deleteButton.onclick = (function (index) {
                 return function () {
                     deleteTask(jsonData[index].id);
@@ -172,7 +195,6 @@ const buildTaskTable = function () {
             buttonDiv.appendChild(editButton);
             buttonDiv.appendChild(deleteButton);
             buttonDiv.appendChild(completeButton);
-            buttonDiv.appendChild(dataInput);
 
             // append button div to card body
             cardBody.appendChild(buttonDiv);
