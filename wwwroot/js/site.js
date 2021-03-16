@@ -35,9 +35,7 @@ const addTask = function (myDataObject) {
     }
     addData();
 }
-
 // GET CALL
-    // GET TASK DETAILS
 
 // EDIT CALL
 
