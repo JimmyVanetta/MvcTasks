@@ -17,8 +17,6 @@ const deleteTask = function (myDataObject) {
             },
             body: null
         });
-        //const data = await response.json();
- 
         buildTaskTable();
     }
     deleteData();
@@ -135,10 +133,34 @@ const buildTaskTable = function () {
             deleteButton.innerText = "Delete";
             completeButton.innerText = "Complete";
 
-            // set action button onclick
+            // set details button onlick
+            detailsButton.onclick = (function (index) {
+                return function () {
+                    var url = window.location.href;
+                    window.location.href += 'Tasks/Details/' + jsonData[index].id;
+                };
+            })(containerData);
+
+            // set edit button onclick
+            editButton.onclick = (function (index) {
+                return function () {
+                    var url = window.location.href;
+                    window.location.href += 'Tasks/Edit/' + jsonData[index].id;
+                };
+            })(containerData);
+
+            // set delete button onclick
             deleteButton.onclick = (function (index) {
                 return function () {
-                    deleteTask(jsonData[index].id)
+                    deleteTask(jsonData[index].id);
+                };
+            })(containerData);
+
+            // set complete button onclick
+            completeButton.onclick = (function (index) {
+                return function () {
+                    var url = window.location.href;
+                    window.location.href += 'Tasks/Complete/' + jsonData[index].id;
                 };
             })(containerData);
 

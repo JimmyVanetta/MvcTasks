@@ -60,9 +60,9 @@ namespace MvcTasks.Controllers
             {
                 _context.Add(tasks);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Index", "Home");
             }
-            return View(tasks);
+            return RedirectToAction("Index", "Home");
         }
 
         // GET: Tasks/Edit/5
@@ -78,7 +78,7 @@ namespace MvcTasks.Controllers
             {
                 return NotFound();
             }
-            return View(tasks);
+            return RedirectToAction("Index", "Home");
         }
 
         // POST: Tasks/Edit/5
@@ -111,9 +111,9 @@ namespace MvcTasks.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Index", "Home");
             }
-            return View(tasks);
+            return RedirectToAction("Index", "Home");
         }
 
         // GET: Tasks/Delete/5
