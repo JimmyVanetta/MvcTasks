@@ -5,7 +5,7 @@ This main branch contains a classic ASP.NET MVC style app. I wanted to showcase 
 
 Steps for getting set up:
 
-1.) Open solution (.sln) file.
+1.) Open solution (.sln) file in vs 2019.
 
 2.) Navigate to the toolbar at top of window and go to the following option: Tools > NuGet Package Manager > NuGet Package Manager Console.
 
