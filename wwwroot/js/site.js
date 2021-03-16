@@ -90,6 +90,11 @@ const buildTaskTable = function () {
             var completed = document.createElement("input");
             completed.setAttribute("type", "checkbox");
 
+            // check box if is completed
+            if (jsonData[containerData].isCompleted == true) {
+                completed.checked = true;
+            }
+
             // set check box class names
             completedDiv.className = "checkbox";
             completedLabel.className = "completedlabel";

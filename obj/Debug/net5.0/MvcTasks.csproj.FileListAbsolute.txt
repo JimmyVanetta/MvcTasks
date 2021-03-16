@@ -134,7 +134,6 @@ C:\Users\j_van\Source\Repos\MvcTasks\obj\Debug\net5.0\Razor\Views\Shared\Error.c
 C:\Users\j_van\Source\Repos\MvcTasks\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\j_van\Source\Repos\MvcTasks\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\j_van\Source\Repos\MvcTasks\obj\Debug\net5.0\Razor\Views\Tasks\Create.cshtml.g.cs
-C:\Users\j_van\Source\Repos\MvcTasks\obj\Debug\net5.0\Razor\Views\Tasks\Delete.cshtml.g.cs
 C:\Users\j_van\Source\Repos\MvcTasks\obj\Debug\net5.0\Razor\Views\Tasks\Details.cshtml.g.cs
 C:\Users\j_van\Source\Repos\MvcTasks\obj\Debug\net5.0\Razor\Views\Tasks\Edit.cshtml.g.cs
 C:\Users\j_van\Source\Repos\MvcTasks\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
