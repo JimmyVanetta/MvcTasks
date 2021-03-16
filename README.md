@@ -1,7 +1,7 @@
 # MvcTasks
 Simple CRUD app for keeping track of daily tasks.
 
-This branch contains code that builds the list of tasks using an API call to build a one page hybrid card/list view. I also integrated the delete button to delete without a browser redirect to another view.
+This branch contains code that builds the list of tasks using an API call to build a one page hybrid card/list view. I also integrated the delete button to delete using API call without a browser redirect to another view.
 
 
 
