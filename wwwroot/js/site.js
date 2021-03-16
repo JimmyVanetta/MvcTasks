@@ -24,6 +24,22 @@ const deleteTask = function (myDataObject) {
     }
     deleteData();
 }
+// ADD CALL
+const addTask = function (myDataObject) {
+    const addData = async () => {
+        const response = await fetch('https://localhost:44316/api/tasksapi', {
+            method: 'POST',
+            body: JSON.stringify(myDataObject),
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        });
+
+    }
+    buildTaskTable();
+    addData();
+}
+
 // GET CALL
     // GET TASK DETAILS
 
@@ -99,6 +115,10 @@ const buildTaskTable = function () {
             var editButton = document.createElement("button");
             var deleteButton = document.createElement("button");
             var completeButton = document.createElement("button");
+            var dataInput = document.createElement("input");
+            dataInput.setAttribute("type", "hidden");
+            dataInput.setAttribute("name", "taskid");
+            dataInput.setAttribute("value", jsonData[containerData].id);
 
             // set action button class names
             buttonDiv.className = "actionbuttons";
@@ -114,12 +134,16 @@ const buildTaskTable = function () {
             completeButton.innerText = "Complete";
 
             // set action button onclick
+            //deleteButton.onclick = function(jsonData[containerData]) {
+
+            //}
 
             // append buttons to button div
             buttonDiv.appendChild(detailsButton);
             buttonDiv.appendChild(editButton);
             buttonDiv.appendChild(deleteButton);
             buttonDiv.appendChild(completeButton);
+            buttonDiv.appendChild(dataInput);
 
             // append button div to card body
             cardBody.appendChild(buttonDiv);
