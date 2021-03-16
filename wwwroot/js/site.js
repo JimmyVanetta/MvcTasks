@@ -34,9 +34,8 @@ const addTask = function (myDataObject) {
                 'Content-Type': 'application/json'
             },
         });
-
+        buildTaskTable();
     }
-    buildTaskTable();
     addData();
 }
 
@@ -51,6 +50,10 @@ const addTask = function (myDataObject) {
 const buildTaskTable = function () {
     var buildTable = function (jsonData) {
         var container = document.getElementById("taskcards");
+
+        while (container.firstChild) {
+            container.removeChild(container.firstChild)
+        }
         for (var containerData in jsonData) {
 
             // setup card
