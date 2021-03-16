@@ -137,9 +137,11 @@ const buildTaskTable = function () {
             completeButton.innerText = "Complete";
 
             // set action button onclick
-            //deleteButton.onclick = function(jsonData[containerData]) {
-
-            //}
+            deleteButton.onclick = (function (index) {
+                return function () {
+                    deleteTask(jsonData[index].id)
+                };
+            })(containerData);
 
             // append buttons to button div
             buttonDiv.appendChild(detailsButton);

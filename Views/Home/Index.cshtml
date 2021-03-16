@@ -5,7 +5,9 @@
 <div class="text-center">
     <h2 class="display-4">Welcome</h2>
     <p>Use this app to keep track of all your daily tasks!</p>
-    <button type="button" class="btn btn-primary btn-sm">Add Task</button>
+    <p>
+        <a asp-action="Create" asp-controller="Tasks">Create New</a>
+    </p>
 </div>
 <!-- Task Cards -->
 <div class="container" id="taskcards">
