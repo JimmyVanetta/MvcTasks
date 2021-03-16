@@ -7,7 +7,7 @@ This branch contains code that builds the list of tasks using an API call to bui
 
 Steps for getting set up:
 
-1.) Open solution (.sln) file.
+1.) Open solution (.sln) file in visual studio 2019. (I just used free version)
 
 2.) Navigate to the toolbar at top of window and go to the following option: Tools > NuGet Package Manager > NuGet Package Manager Console.
 
