@@ -17,10 +17,9 @@ const deleteTask = function (myDataObject) {
             },
             body: null
         });
-        const data = await response.json();
-
-        // now do whatever you want with the data  
-        console.log(data);
+        //const data = await response.json();
+ 
+        buildTaskTable();
     }
     deleteData();
 }
