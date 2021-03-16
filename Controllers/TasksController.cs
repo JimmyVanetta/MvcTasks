@@ -78,7 +78,7 @@ namespace MvcTasks.Controllers
             {
                 return NotFound();
             }
-            return RedirectToAction("Index", "Home");
+            return View(tasks);
         }
 
         // POST: Tasks/Edit/5
